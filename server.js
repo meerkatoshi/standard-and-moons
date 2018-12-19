@@ -3,6 +3,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const fs = require('fs');
 const express = require('express');
+const cors = require('cors');
 const https = require('https');
 const util = require("util");
 
@@ -36,7 +37,10 @@ const usersData = JSON.parse(fs.readFileSync('database/usersData.json'));
 const object = getUniqueAssetsAndIds(usersData);
 const assets = object['assets'];
 const ids = object['ids'];
-
+const corsOptions = {
+  origin: 'http://standardandmoons.com',
+  optionsSuccessStatus: 200
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // COMMENDS:
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,12 +54,6 @@ setInterval(getIndex, 3660000);
 
 app.listen(port, listening);
 app.use(express.static('public'));
-app.use((req, res, next) => {
-    res.append('Access-Control-Allow-Origin', 'http://www.standardandmoons.com');
-    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.append('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
 
 // SYNC FUNCTIONS
 function listening() {
@@ -290,9 +288,9 @@ function getIndex() {
 }
 
 // APIs
-app.get('/getindexdata/:user/', getIndexData);
-app.get('/seelikes/:user/', seeLikes);
-app.get('/givelikes/:user/', giveLikes);
+app.get('/getindexdata/:user/', cors(corsOptions), getIndexData);
+app.get('/seelikes/:user/', cors(corsOptions), seeLikes);
+app.get('/givelikes/:user/', cors(corsOptions), giveLikes);
 
 function getIndexData(request, response) {
     const user = request.params.user;
