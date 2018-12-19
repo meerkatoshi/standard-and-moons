@@ -2,7 +2,7 @@
 // MAIN VARIABLES
 //---------------------------------------------
 const user = 'meerkatoshi';
-const path = 'localhost:8080';
+const path = 'standardandmoons.com';
 const http = new HTTP;
 
 //---------------------------------------------
@@ -31,5 +31,5 @@ box.addEventListener('click', updateInput);
 tweet.addEventListener('click', share);
 like.addEventListener('click', giveLikes);
 window.addEventListener('resize', readData);
-window.setInterval(refreshData, 600000);
+window.setInterval(refreshData, 3600000);
 window.onload = load();
