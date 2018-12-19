@@ -50,6 +50,12 @@ setInterval(getIndex, 3660000);
 
 app.listen(port, listening);
 app.use(express.static('public'));
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', 'http://www.standardandmoons.com');
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 
 // SYNC FUNCTIONS
 function listening() {
@@ -289,7 +295,6 @@ app.get('/seelikes/:user/', seeLikes);
 app.get('/givelikes/:user/', giveLikes);
 
 function getIndexData(request, response) {
-    response.addHeader("Access-Control-Allow-Origin", "http://www.standardandmoons.com");
     const user = request.params.user;
     const index = usersData.findIndex(users => users.user === user);
 
@@ -298,7 +303,6 @@ function getIndexData(request, response) {
 }
 
 function seeLikes(request, response) {
-    response.addHeader("Access-Control-Allow-Origin", "http://www.standardandmoons.com");
     const user = request.params.user;
     const index = usersData.findIndex(users => users.user === user);
     const likes = usersData[index].likes;
@@ -306,7 +310,6 @@ function seeLikes(request, response) {
 }
 
 function giveLikes(request, response) {
-    response.addHeader("Access-Control-Allow-Origin", "http://www.standardandmoons.com");
     const user = request.params.user;
     const index = usersData.findIndex(users => users.user === user);
 
