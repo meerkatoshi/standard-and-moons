@@ -2,7 +2,7 @@
 // MAIN VARIABLES
 //---------------------------------------------
 const user = 'co';
-const path = 'localhost:8080';
+const path = 'standardandmoons.com';
 const http = new HTTP;
 
 //---------------------------------------------
