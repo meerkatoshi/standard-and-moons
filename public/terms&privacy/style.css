@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+:root {
+    --color-bg-dark: #12151E;
+    --color-bg-medium: #1E222E;
+    --color-bg-light: #FAFAFA;
+    --color-text-dark: #12151E;
+    --color-text-medium: #7A7890;
+    --color-text-light: #FFFFFF;
+    --color-splash: #F7D349;
+    --font-family-primary: monospace;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: var(--font-family-primary);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color-bg-dark);
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+header {
+    color: var(--color-text-light);
+    font-size: 20px;
+}
+
+main {
+    line-height: 1.6;
+    margin-left: 320px;
+    margin-bottom: 50px;
+    padding: 0 40px;
+    position: absolute;
+}
+
+section article {
+    color: var(--color-text-medium);
+    text-align: justify;
+}
+
+main blockquote {
+    color: var(--color-text-medium);
+    font-size: 11px;
+    padding-top: 20px;
+}
+
+section li {
+    margin-left: 20px; 
+}
+
+section header {
+    padding: 20px 0px;
+}
+
+section h3 {
+    padding: 10px 0px;
+}
+
+article a:link {
+    color: var(--color-splash);
+}
+
+nav {
+    min-width: 320px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-right: 2px solid var(--color-text-light);
+    padding: 20px 40px;
+}
+
+nav header {
+    color: var(--color-text-light);
+    font-size: 24px;
+}
+
+nav li {
+    list-style: none;
+    padding: 20px 0px;
+    position: relative;
+    height: 40px;
+}
+
+nav a {
+    color: var(--color-text-medium);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--color-text-light);
+}
+
+@media only screen and (max-width: 700px) {
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 2px solid var(--color-text-light);
+        height: 150px;
+        z-index: 1;
+    }
+
+    main {
+        position: relative;
+        margin-left: 0;
+        margin-top: 150px;
+    }
+}

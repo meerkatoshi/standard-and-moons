@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+:root {
+    --box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.1);
+    --color-bg-dark: #12151E;
+    --color-bg-medium: #1E222E;
+    --color-bg-light: #FAFAFA;
+    --color-text-dark: #12151E;
+    --color-text-medium: #7A7890;
+    --color-text-light: #FFFFFF;
+    --color-splash: #F7D349;
+    --font-family-primary: monospace;
+    --font-family-secondary: 'Permanent Marker', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: var(--font-family-primary);
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: var(--color-bg-dark);
+    line-height: 1.5;
+}
+
+body {
+    margin: 0 5vw;
+}
+
+a {
+    cursor: pointer;
+    color: var(--color-splash);
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+}
+
+button:focus {
+    color:  var(--color-splash);
+}
+
+/* 1. Header */
+header {
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 20px 0px;
+    max-width: 375px;
+    margin: auto;
+}
+
+header p {
+    text-align: left;
+    font-size: 11px;
+}
+
+/* 2. Main */
+main {
+    margin: 0 auto;
+    max-width: 375px;
+}
+
+.panel-desktop {
+    display: none;
+}
+
+/* 2.1. Index */
+.progress-container, .chart-container {
+    display: inline-flex;
+    width: 100%;
+}
+
+.progress-wrapper, .chart-wrapper {
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.index .progress-container .progress-wrapper {
+    background-color: var(--color-bg-light);
+}
+
+#sample, #share {
+    width: 25px;
+    margin-left: 5px;
+}
+
+/* 2.1.1. Progress container */
+.progress-container .progress-wrapper .index-details {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-container .progress-wrapper .index-details h1 {
+    color: var(--color-text-dark);
+    font-family: var(--font-family-secondary);
+}
+
+.progress-container .progress-wrapper .index-details h3 {
+    font-family: var(--font-family-secondary);
+}
+
+.progress-container .progress-wrapper .assets {
+    padding: 20px 0px;
+}
+
+.progress-container .progress-wrapper .assets .progress-section {
+    padding: 10px 0px;
+}
+
+.progress-container .progress-wrapper .assets .progress-section .progress-bar {
+    width: 100%;
+}
+
+.progress-container .progress-wrapper .assets .progress-section .progress-box {
+    background: rgba(30, 34, 46, 0.8);
+    border-radius: 5px;
+}
+
+.progress-container .progress-wrapper .assets .progress-section .progress-bar .progress-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.progress-container .progress-wrapper .assets .progress-section .progress-box .percentage {
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 3px;
+    animation: animate-positive 1.0s;
+}
+
+#asset1, #asset2, #asset3, #asset4, #asset5 {
+    background: var(--color-splash);
+}
+
+/* 2.2. Chart container */
+.index .chart-container > * {
+    color: var(--color-text-light);
+}
+
+/* 2.2.1. Chart */
+.index .chart-container {
+    margin-top: 20px;
+}
+
+.index .chart-container .chart-wrapper {
+    background-color: var(--color-bg-medium);
+}
+
+/* 2.2.1.1. Chart top */
+.index .chart-container .chart-wrapper .chart-top {
+    align-items: flex-start; 
+    display: flex;
+    justify-content: space-between;
+}
+
+.index .chart-container .chart-wrapper .chart-top .buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0px;
+}
+
+.index .chart-container .chart-wrapper .chart-top .button {
+    background: transparent;
+    border: transparent;
+    color: var(--color-text-light);
+    min-width: 25px;
+}
+
+.index .chart-container .chart-wrapper .chart-top .current {
+    color:  var(--color-splash);
+}
+
+.index .chart-container .chart-wrapper .chart-top text {
+    font-size: 14px;
+}
+
+/* 2.2.1.2. Chart bottom */
+.line-chart {
+    fill: none;
+    stroke: var(--color-splash);
+    stroke-width: 2px;
+}
+
+.tooltip {
+    fill: none;
+    stroke: transparent;
+    /* stroke: var(--color-text-light); */
+    stroke-width: 0.5px;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+  
+.focus circle {
+    fill: var(--color-splash);
+    stroke: var(--color-bg-medium);
+    stroke-width: 5px;
+}
+    
+.x-hover-line {
+    stroke:  var(--color-splash);
+    stroke-width: 1px;
+    stroke-dasharray: 3,3;
+}
+
+.values {
+    display: flex;
+}
+
+.xAxis-div {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.past, .present {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2.2.2. Share */
+#share {
+    display: inline;
+}
+
+#tweet {
+    color: var(--color-splash);
+}
+
+#like {
+    padding: 3px 0px;
+}
+
+#likes {
+    color: var(--color-text-medium);
+    text-align: center;
+}
+
+/* 2.3. Signature */
+.index .signature {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3px;
+    padding-right: 30px;
+}
+
+.index .signature img {
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
+    border-radius: 50%;
+    margin-top: 3px;
+}
+
+.index .signature p {
+    color: var(--color-text-medium);
+    font-size: 12px;
+}
+
+.index .signature i {
+    margin: 0 5px;
+    font-size: 10px;
+}
+
+/* Panel */
+.panel {
+    margin-top: 20px;
+}
+
+.panel h2 {
+    color: var(--color-text-light);
+    padding: 40px 0px 20px 0px;
+}
+
+.panel p {
+    color: var(--color-text-medium);
+    padding-bottom: 20px;
+}
+
+#request {
+    border: 1px solid var(--color-splash);
+    border-radius: 5px;
+    width: 150px;
+    padding: 5px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.panel img {
+    /* display: none; */
+    width: 100%;
+    margin: 40px 0;
+    max-height: auto;
+}
+
+.panel .donation {
+    padding: 40px 0px;
+    text-align: center;
+}
+
+.panel .donation p {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.panel .donation a {
+    color: var(--color-splash);
+    font-size: 14px;
+}
+
+#request:link {
+    color: var(--color-splash);
+}
+
+#request:hover {
+    color: var(--color-text-light);
+}
+
+/* 3. Footer */
+footer {
+    color: var(--color-bg-medium);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+footer a {
+    color: var(--color-bg-medium);
+    margin: 15px;
+}
+
+footer a:hover {
+    color: var(--color-text-light);
+}
+
+footer p {
+    color: var(--color-bg-medium);
+    margin-top: 10px;
+}
+
+/* Key frames */
+@keyframes animate-positive {
+    0% {
+        width: 0;
+    }
+}
+
+/* Media queries */
+@media only screen and (min-width: 1150px) {
+    body {
+        margin: 0;
+    }
+
+    header, .panel, footer, #sample {
+        display: none;
+    }
+
+    main {
+        /* border: 5px solid blue; */
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        min-width: 100%;
+        height: 100vh;
+    }
+    
+    .index {
+        margin: 0px auto;
+        padding-top: 100px;
+    }
+
+    .index .container {
+        display: flex;
+        width: 100%;
+    }
+
+    .progress-wrapper {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 315px;
+        padding: 20px 30px;
+    }
+
+    .chart-wrapper {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        min-width: 525px;
+        padding: 20px 30px;
+    }
+
+    .index .chart-container {
+        margin-top: 0px;
+    }
+
+    .panel-desktop {
+        display: block;
+        width: 290px;
+        height: 100%;
+        padding: 0px 15px;
+        background-color: var(--color-bg-medium);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header-desktop {
+        color: var(--color-text-light);
+        text-align: center;
+        padding: 20px 0px;
+        max-width: 375px;
+        margin: auto;
+    }
+    
+    .header-desktop h3 {
+        color: var(--color-text-light);
+        font-size: 11px;
+        text-align: left;
+    }
+
+    .panel-desktop img {
+        width: 100%;
+        margin: 10px 0;
+        max-height: auto;
+    }
+
+    .panel-desktop h2 {
+        color: var(--color-text-light);
+        padding: 20px 0px 10px 0px;
+    }
+    
+    .panel-desktop p {
+        color: var(--color-text-medium);
+        padding-bottom: 20px;
+    }
+
+    #request-desktop {
+        border: 1px solid var(--color-splash);
+        border-radius: 5px;
+        width: 150px;
+        padding: 5px 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    #request-desktop:link {
+        color: var(--color-splash);
+    }
+    
+    #request-desktop:hover {
+        color: var(--color-text-light);
+    }
+
+    .panel-desktop .donation {
+        padding: 40px 0px;
+        text-align: center;
+    }
+    
+    .panel-desktop .donation p {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    
+    .panel-desktop .donation a {
+        color: var(--color-splash);
+        font-size: 14px;
+    }
+    
+    .panel-desktop .footer {
+        text-align: center;
+    }
+    
+    .panel-desktop .footer a {
+        color: var(--color-text-dark);
+        margin: 5px;
+    }
+
+    .panel-desktop .footer a:hover {
+        color: var(--color-text-light);
+    }
+    
+    .panel-desktop .footer p {
+        color: var(--color-text-dark);
+        margin-top: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+    .index .chart-container .chart-wrapper .chart-top {
+        display: block;
+    }
+
+    .index .chart-container .chart-wrapper .chart-top .buttons {
+        margin-top: 15px;
+    }
+
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Github emoji -->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- my stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="styleDetails.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129832882-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-129832882-1');
+    </script>
+    <title>Royal Flush Index</title>
+</head>
+<body>
+    <header>
+        <h1>Standard and moOns</h1>
+        <p>..a grassroots collection of imaginary (not financial advice) crypto indexes.</p>
+    </header>
+    <main>
+        <div class="panel-desktop">
+            <div class="panel-desktop-top">
+                <div class="header-desktop">
+                    <h1>Standard and moOns</h1>
+                    <h3>..a grassroots collection of imaginary (not financial advice) crypto indexes.</h3>
+                </div>
+                <h2>Create your own index</h2>
+                <p>Imagine that you receive $100 as a gift, but there’s a catch: you must split the $100 between 5 coins and hold them for a year. What would you choose?</p>
+                <a id="request-desktop" href="https://meerkatoshi.typeform.com/to/QD6lAN" target="_blank">Request Index</a>
+            </div>
+            <div class="panel-desktop-bottom">
+                <div class="donation">
+                    <p>Support this project:</p>
+                    <a href="https://www.blockchain.com/btc/address/1buqFJ6CeeFBLnb9gNihrmymouRrNiSoh" target="_blank"><i class="fab fa-bitcoin fa-2x"></i></a>
+                    <a id="requestDonationTrigger"><i class="fab fa-ethereum fa-2x"></i></a>
+                </div>
+                <div class="footer">
+                    <a href="../terms&privacy/#terms">Terms of Service</a>
+                    <a href="../terms&privacy/#privacy">Privacy Policy</a>
+                    <p>&copy;2018 Standard and moOns</p> 
+                </div>
+            </div>
+        </div>
+        <section class="index">
+            <div class="container">
+                <div class="progress-container">
+                    <div class="progress-wrapper">
+                        <div class="index-details">
+                            <h1 class="index-title">Royal Flush Index</h1>
+                            <h3 id="index-change"></h3>
+                        </div>
+                        <div class="assets">
+                            <div class="progress-section">
+                                <div class="progress-bar">
+                                    <div class="progress-title">
+                                        <p class="asset-title">Bitcoin</p>
+                                        <p class="asset-percentage">50%</p>
+                                    </div>
+                                    <div class="progress-box">
+                                        <div class="percentage" id="asset1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-section">
+                                <div class="progress-bar">
+                                    <div class="progress-title">
+                                        <p class="asset-title">0x</p>
+                                        <p class="asset-percentage">25%</p>
+                                    </div>
+                                    <div class="progress-box">
+                                        <div class="percentage" id="asset2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-section">
+                                <div class="progress-bar">
+                                    <div class="progress-title">
+                                        <p class="asset-title">Request Network</p>
+                                        <p class="asset-percentage">10%</p>
+                                    </div>
+                                    <div class="progress-box">
+                                        <div class="percentage" id="asset3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-section">
+                                <div class="progress-bar">
+                                    <div class="progress-title">
+                                        <p class="asset-title">VeChain</p>
+                                        <p class="asset-percentage">10%</p>
+                                    </div>
+                                    <div class="progress-box">
+                                        <div class="percentage" id="asset4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-section">
+                                <div class="progress-bar">
+                                    <div class="progress-title">
+                                        <p class="asset-title">Zcoin</p>
+                                        <p class="asset-percentage">5%</p>
+                                    </div>
+                                    <div class="progress-box">
+                                        <div class="percentage" id="asset5"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sample"></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-wrapper">
+                        <div class="chart-top">
+                            <div id="values"></div>
+                            <div class="buttons">
+                                <button class="button" id="1W" value="1w">1w</button>
+                                <button class="button" id="1M" value="1m">1m</button>
+                                <button class="button current" id="3M" value="3m">3m</button>
+                                <button class="button" id="ind" value="ind">ind</button>
+                            </div>
+                        </div>
+                        <div id="chart-bottom">
+                            <div id="chart"></div>
+                            <div id="xAxis"></div>
+                        </div>
+                    </div>
+                    <div id="share">
+                        <button id="tweet"><i class="fab fa-twitter-square fa-2x"></i></button>
+                        <button id="like"><i id="moon" class="em em-full_moon"></i></button>
+                        <p id="likes">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="signature">
+                <p>made with</p>
+                <i class="em em-crossed_fingers"></i>
+                <p id="by">by</p>
+                <a href="https://twitter.com/corina_pascu" target="_blank"><img src="../img/users/corina.jpg" alt="index author"></a>
+            </div>
+        </section>
+        <section class="panel">
+            <h2>Create your own index</h2>
+            <p>Imagine that you receive $100 as a gift, but there’s a catch: you must split the $100 between 5 coins and hold them for a year. What would you choose?</p>
+            <a id="request" href="https://meerkatoshi.typeform.com/to/QD6lAN" target="_blank">Request Index</a>
+            <div class="donation">
+                <p>Support this project:</p>
+                <a href="https://www.blockchain.com/btc/address/1buqFJ6CeeFBLnb9gNihrmymouRrNiSoh" target="_blank"><i class="fab fa-bitcoin fa-2x"></i></a>
+                <a id="requestDonationTrigger"><i class="fab fa-ethereum fa-2x"></i></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="../terms&privacy/#terms" target="_blank">Terms of Service</a>
+        <a href="../terms&privacy/#privacy" target="_blank">Privacy Policy</a>
+        <p>&copy;2018 Standard and moOns</p>
+    </footer>
+
+    <!-- D3.js -->
+    <script src="https://unpkg.com/d3@5.7.0/dist/d3.min.js"></script>
+    <!-- Request Network donation button -->
+    <script type="text/javascript" src="https://donations.request.network/donate.js"></script>
+    <script type="text/javascript">
+    var requestDonations = new requestNetworkDonations({
+        address: '0x0E0BC98F62B06B04e7A4F077d688917a93d2BD4D',
+        currencies: ['ETH', 'ZRX', 'BAT', 'DAI']
+    });
+    requestDonations.start();
+    </script>
+    <script src="../main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

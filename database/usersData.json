@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "user": "meerkatoshi",
+    "likes": 266,
+    "assets": [
+      "BTC",
+      "ICX",
+      "ZRX",
+      "XLM",
+      "XMR"
+    ],
+    "percentages": [
+      0.5,
+      0.18,
+      0.14,
+      0.1,
+      0.08
+    ],
+    "index": 296,
+    "name": "S&M Index"
+  },
+  {
+    "id": 1,
+    "user": "co",
+    "likes": 92,
+    "assets": [
+      "BTC",
+      "ZRX",
+      "REQ",
+      "VET",
+      "XZC"
+    ],
+    "percentages": [
+      0.5,
+      0.25,
+      0.10,
+      0.10,
+      0.05
+    ],
+    "index": 107,
+    "name": "Royal Flush Index"
+  }
+]
