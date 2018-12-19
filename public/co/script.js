@@ -31,5 +31,5 @@ box.addEventListener('click', updateInput);
 tweet.addEventListener('click', share);
 like.addEventListener('click', giveLikes);
 window.addEventListener('resize', readData);
-window.setInterval(refreshData, 60000);
+window.setInterval(refreshData, 600000);
 window.onload = load();
