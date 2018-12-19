@@ -17,7 +17,7 @@ const writeFile = util.promisify(fs.writeFile);
 // VARIABLES:
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // 1) App variables
-const port = process.env.PORT || 8080;
+const port = (process.env.PORT || 80);
 // 2) URL Parameters
 // const fsym = 'BTC';
 const tsym = 'USD';
@@ -289,15 +289,16 @@ app.get('/seelikes/:user/', seeLikes);
 app.get('/givelikes/:user/', giveLikes);
 
 function getIndexData(request, response) {
+    response.addHeader("Access-Control-Allow-Origin", "http://www.standardandmoons.com");
     const user = request.params.user;
     const index = usersData.findIndex(users => users.user === user);
 
     const data = JSON.parse(fs.readFileSync(`${dirIndividual}${index}_${user}.json`));
-
     response.send(data);
 }
 
 function seeLikes(request, response) {
+    response.addHeader("Access-Control-Allow-Origin", "http://www.standardandmoons.com");
     const user = request.params.user;
     const index = usersData.findIndex(users => users.user === user);
     const likes = usersData[index].likes;
@@ -305,6 +306,7 @@ function seeLikes(request, response) {
 }
 
 function giveLikes(request, response) {
+    response.addHeader("Access-Control-Allow-Origin", "http://www.standardandmoons.com");
     const user = request.params.user;
     const index = usersData.findIndex(users => users.user === user);
 
