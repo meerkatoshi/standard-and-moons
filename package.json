@@ -4,7 +4,9 @@
   "description": "a grassroots collection of imaginary (not financial advice) crypto indexes",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "lint": "./node_modules/lint/bin/node-lint server.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +24,15 @@
     "url": "https://github.com/meerkatoshi/standard-and-moons/issues"
   },
   "homepage": "https://github.com/meerkatoshi/standard-and-moons#readme",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "lint": "*"
   }
 }
