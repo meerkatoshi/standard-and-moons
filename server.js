@@ -45,8 +45,8 @@ console.log('Server started..');
 // getData();
 // getIndex();
 // TIMEOUT FUNCTION
-// setInterval(updateData, 60000);
-// setInterval(getIndex, 65000);
+setInterval(updateData, 600000);
+setInterval(getIndex, 650000);
 
 app.listen(port, listening);
 app.use(express.static('public'));
